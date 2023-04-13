@@ -1,0 +1,55 @@
+% --------------------------------------------------
+% Pacotes
+% --------------------------------------------------
+
+\usepackage{varwidth}         % Legenda de figuras
+\usepackage{fancyvrb}         % Ambiente mono-espaçado
+\usepackage{fvextra}          % Melhorias no fancyvrb
+\usepackage{textcomp}         % Símbulos extras
+\usepackage{tabularx}         % Tabelas
+\usepackage{svg}              % Figuras SVG
+
+% Ajuste de espaçamento no Verbatim (fancyvrb)
+\let\oldverbatim\Verbatim%
+\let\oldendverbatim\endVerbatim%
+\renewenvironment{Verbatim}%
+  {\endgraf\vspace*{-1em}\oldverbatim}%
+  {\oldendverbatim\vspace*{-1em}}%
+
+% --------------------------------------------------
+% Algoritmos
+% --------------------------------------------------
+\usepackage[noend]{algpseudocode}
+% Comandos para traduzir as instruções do pacote de algoritmos
+\algrenewcommand\algorithmicrequire{\textbf{Entrada:}}
+\algrenewcommand\algorithmicensure{\textbf{Condição:}}
+\algrenewcommand\algorithmicend{\textbf{fim}}
+\algrenewcommand\algorithmicif{\textbf{se}}
+\algrenewcommand\algorithmicthen{\textbf{então}}
+\algrenewcommand\algorithmicelse{\textbf{senão}}
+\algrenewcommand\algorithmicfor{\textbf{para}}
+\algrenewcommand\algorithmicforall{\textbf{para todo}}
+\algrenewcommand\algorithmicdo{\textbf{faça}}
+\algrenewcommand\algorithmicwhile{\textbf{enquanto}}
+\algrenewcommand\algorithmicrepeat{\textbf{repita}}
+\algrenewcommand\algorithmicuntil{\textbf{até que}}
+\renewcommand{\Return}{\State \textbf{retorne} }
+\let\oldalgorithmic\algorithmic
+\let\oldendalgorithmic\endalgorithmic
+\renewenvironment{algorithmic}%
+  {\hrulefill\vspace*{-0.5em}\oldalgorithmic}%
+  {\oldendalgorithmic\vspace*{-1em}\hrulefill}
+
+% --------------------------------------------------
+% Comandos personalizados
+% --------------------------------------------------
+\newcommand{\comando}[1]{\textbf{$\backslash$#1}}
+\newcommand{\ifmgtex}[1]{IFMG\TeX}
+
+
+% --------------------------------------------------
+% Formatação de códigos
+% --------------------------------------------------
+\usepackage{minted}
+\setminted{breaklines, frame=single, encoding=utf8, breakafter=/}
+\usemintedstyle{xcode}

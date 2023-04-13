@@ -1,0 +1,130 @@
+\documentclass[oneside,monografia]{iftex2020}
+
+\include{config}
+
+\addbibresource{referencias.bib}
+
+% --------------------------------------------------
+% Configurações do Documento
+% --------------------------------------------------
+\titulo{Classe {\LaTeX} para trabalhos acadêmicos de institutos federais}
+\autor{Marcos Roberto Ribeiro}
+\local{Bambuí - MG}
+\data{15}{dezembro}{2020}
+
+% Instituição
+\instituicao{IFMG}{Instituto Federal Minas Gerais}{Instituto Federal de Educação Ciência e Tecnologia de Minas Gerais}
+\unidade{Campus Bambuí}
+\curso{Bacharel}{Bacharelado}{Engenharia de Computação}
+
+% Orientação
+\orientador{Nome do Orientador}
+% A opção [F] pode ser usada para o feminino
+\coorientador[F]{Nome da Coorientadora}
+% Caso o coorientador seja de outra instituição
+\instituicaocoorientador{Instituição da Coorientadora}
+
+% Membros da banca examinadora (além do orientador e coorientador)
+\membrobanca{Fulando de Tal}{Instituição do Fulano de Tal}
+\membrobanca{Ciclano de Tal}{Instituição do Ciclano de Tal}
+
+% -------------------------------------------------------
+% Elementos obrigatorios
+% -------------------------------------------------------
+
+% Ficha catalográfica (obrigatória)
+\ficha{elementos/ficha_catalografica}
+
+% --------------------------------------------------
+% Folha de aprovação (obrigatória)
+% --------------------------------------------------
+% Assinaturas e QRCode recortados do documento SEI
+\assinaturas{figuras/assinaturas}
+
+\include{pre_resumo}
+
+% -------------------------------------------------------
+% Elementos opcionais
+% -------------------------------------------------------
+
+% Lista de figuras (opcional)
+\listafiguras
+% Lista de quadros (opcional)
+\listaquadros
+% Lista de tabelas (opcional)
+\listatabelas
+% Lista de algoritmos (opcional)
+\listaalgoritmos
+% Lista de códigos (opcional)
+\listacodigos
+
+\include{pre_opcionais}
+
+\begin{document}
+
+% -------------------------------------------------------
+% Gera elementos pré-textuais
+% -------------------------------------------------------
+\maketitle
+
+% -------------------------------------------------------
+% Capítulo: Introdução
+% -------------------------------------------------------
+\chapter{Introdução} \label{cap:introducao}
+
+\input{elementos/cap_introducao}
+
+\chapter{Configuração dos elementos pré-textuais}
+
+\input{elementos/cap_configuracao_pre}
+
+\chapter{Corpos flutuantes}
+
+\input{elementos/cap_corpos_flutuantes}
+
+\chapter{Ambientes matemáticos}
+
+\input{elementos/cap_ambientes_matematicos}
+
+\chapter{Ferramentas úteis} \label{capitulo:ferramentas_uteis}
+
+\input{elementos/cap_ferramentas_uteis}
+
+\chapter{Citações}
+
+\input{elementos/cap_citacoes}
+
+\chapter{Modelos de referências}
+
+\input{elementos/cap_modelos_referencias}
+
+% -------------------------------------------------------
+% Elementos pós-textuais
+% -------------------------------------------------------
+\postextual
+
+% -------------------------------------------------------
+% Referências bibliográficas
+% -------------------------------------------------------
+
+\printbibliography
+
+% -------------------------------------------------------
+% Apêndices
+% -------------------------------------------------------
+\apendices\partapendices
+
+\chapter{Documento básico usando a classe {IF\TeX}}
+
+\input{elementos/apendice_doc_basico_if}
+
+% -------------------------------------------------------
+% Anexos
+% -------------------------------------------------------
+\anexos\partanexos
+
+\chapter{Páginas interessantes na internet} \label{capitulo:paginas_interessantes}
+
+\input{elementos/anexo_paginas_interessantes}
+
+\end{document}

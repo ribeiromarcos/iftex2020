@@ -1,0 +1,68 @@
+A configuração de diversas opções e principalmente dos elementos pré-textuais é realizada com comandos específicos inseridos antes do comando \comando{begin\{document\}}. As informações do documento são configuradas através dos comandos:
+\begin{description}
+\item[\comando{titulo\{T\}}:] Título do trabalho, substitua T pelo título do trabalho;
+% --------------------------------------------------
+\item[\comando{autor\{N\}}:] Nome do autor do trabalho;
+% --------------------------------------------------
+\item[\comando{local\{L\}}:] Local do trabalho;
+% --------------------------------------------------
+\item[\comando{data\{dia\}\{mês (por extenso)\}\{ano\}}:] Configuração da data do documento que aparecerá na folha de aprovação;
+% --------------------------------------------------
+\item[\comando{instituicao}\{S\}\{N\}\{C\}:] Instituição, onde \textbf{S} é a sigla, \textbf{N} o nome completo e \textbf{C} o nome curto.
+Caso não seja informado, a classe adota o comando \comando{instituicao\{IFMG\}\{Instituto Federal Minas Gerais\}\{Instituto Federal de Educação Ciência e Tecnologia de Minas Gerais\}};
+\item[\comando{unidade\{U\}}:] Nome da unidade do IF, por exemplo, Campus Bambuí;
+% --------------------------------------------------
+\item[\comando{curso\{G\}\{T\}\{N\}}:] Dados do curso, são eles grau obtido com o curso(\textbf{G}), tipo do curso (\textbf{T}) e nome do curso (\textbf{N}).
+Exemplo: \comando{curso\{Bacharel\}\{Bacharelado\}\{Engenharia de Computação\}\{Bacharel\}};
+% --------------------------------------------------
+\item[\comando{orientador[G]\{O\}}:] Nome do professor orientador do trabalho.
+Caso seja uma orientadora pode ser usado o comando \comando{orientador[F]\{O\}};
+% --------------------------------------------------
+\item[\comando{coorientador[G]\{C\}}:] Nome do coorientador do trabalho.
+Caso seja uma coorientadora pode ser usado um comando análogo a definição de orientadora como \comando{coorientador[F]\{C\}}.
+No caso de coorientadores de outras instituições, é preciso usar  comando \comando{instituicaocoorientador\{I\}}, onde \textbf{I} é a instituição do coorientador;
+% --------------------------------------------------
+\item[Membros da banca avaliadora:] Os membros da banca avaliadora constarão na folha de aprovação juntamente com os nomes do orientador e do coorientador.
+A definição dos membros é feita com o comando \comando{membrobanca\{N\}\{I\}}, onde \textbf{N} é o nome do membro e \textbf{I} é sua instituição.
+É preciso usar um comando para cada membro;
+
+% --------------------------------------------------
+\item[\comando{ficha\{F\}}:] Insere a ficha catalográfica (elemento obrigatório) contida no arquivo \textbf{F}\footnote{A ficha catalográfica é inserida apenas em documentos frente e verso.}.
+Entre em contato com a biblioteca para obter a ficha catalográfica em arquivo PDF.
+Essa ficha deverá ser inserida no documento após a defesa;
+% --------------------------------------------------
+\item[\comando{assinaturas\{F\}}:] Insere as assinaturas da folha de aprovação (elemento obrigatório).
+Após a defesa, as assinaturas e QRCode devem ser recortados do documento de folha de aprovação no SEI;
+% --------------------------------------------------
+\item[Dedicatória, Agradecimentos e Epígrafe:] Os elementos pré-textuais opcionais dedicatória, agradecimentos e epígrafe são inseridos com os comandos \comando{textodedicatoria\{T\}}, \comando{textoagradecimentos\{T\}} e \comando{textoepigrafe\{T\}}, respectivamente.
+
+% --------------------------------------------------
+\item[Resumo e \textit{Abstract}:] O resumo é incluído com o comando \comando{resumo\{T\}}. Este comando deve ser imediatamente seguido pelo comando \comando{palavraschave\{P\}} para definição das palavras chaves, sendo que P são as palavras chaves iniciando com letras maiúsculas e separadas por pontos. O \textit{Abstract} é configurado de forma análoga com os comandos \comando{abstract\{T\}} e \comando{keywords\{K\}}.
+% --------------------------------------------------
+\item[\comando{listafiguras}:] Insere a lista de figuras;
+% --------------------------------------------------
+\item[\comando{listaquadros}:] Insere a lista de quadros;
+% --------------------------------------------------
+\item[\comando{listatabelas}:] Insere a lista de tabelas;
+% --------------------------------------------------
+\item[\comando{listaalgoritmos}:] Insere a lista de algoritmos;
+% --------------------------------------------------
+\item[\comando{listacodigos}:] Insere a lista de códigos;
+% --------------------------------------------------
+\item[\comando{listasiglas\{L\}}:] Insere a lista de siglas. O parâmetro L é a própria lista de siglas definida em um ambiente \textit{itemize} como mostrado no Código \ref{codigo:lista_siglas};
+% --------------------------------------------------
+\item[\comando{listasimbolos\{L\}}:] Insere a lista de siglas. O parâmetro L é a definição da lista de símbolos de forma análoga a definição da lista de siglas.
+\end{description}
+
+\begin{codigo}[!htb]
+\caption{Lista de siglas} \label{codigo:lista_siglas}
+\begin{Verbatim}[frame=lines]
+\begin{itemize}[]
+\item[ABNT] -- Associação Brasileira de Normas Técnicas
+\item[IFMG] -- Instituto Federal Minas Gerais
+\item[SQL] -- \textit{Structured Query Language}
+\item[TCC] -- Trabalho de conclusão de curso
+\end{itemize}
+\end{Verbatim}
+\fonte{Elaborado pelo autor, 2020.}
+\end{codigo}

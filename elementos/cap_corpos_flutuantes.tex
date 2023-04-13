@@ -1,0 +1,137 @@
+Corpos flutuantes são elementos não textuais como figuras e tabelas que complementam as informações do texto. Neste capítulo são expostos breves exemplos dos corpos flutuantes disponíveis na classe {IF\TeX}.
+
+Na Seção \ref{secao:figuras} é mostrado como inserir figuras, a Seção \ref{secao:tabelas_e_quadros} explica como incluir tabelas e quadros e a Seção \ref{secao:algoritmos_e_codigos} demostra como trabalhar com algoritmos e códigos fontes.
+
+\section{Figuras}
+\label{secao:figuras}
+
+A inserção de figuras é realizada normalmente através do comando \comando{begin\{figure\}}.
+A Figura \ref{figura:logomarca_if} exibe a logomarca do IF.
+É interessante usar o ambiente \texttt{varwidth} em todas as figuras para manter a fonte alinhada a esquerda.
+No caso da Figura \ref{figura:logomarca_if}, também foi necessário adicionar uma borda para aumentar o tamanho da figura e manter o alinhamento da fonte.
+No caso de figuras de outros autores a citação na fonte deve ser feita com o comando \comando{citefonte\{\}}.
+
+\begin{figure}[!htb] \centering
+\caption{Logomarca do IF} \label{figura:logomarca_if}
+\begin{varwidth}{\linewidth}
+ \framebox[0.8\linewidth]{
+   \includesvg[width=6cm]{figuras/if}
+ }
+ \fonte{\url{https://www.ifmg.edu.br/portal/comunicacao/identidade-visual}}
+\end{varwidth}
+\end{figure}
+
+De acordo com as normas ABNT a lista de figuras é um elemento opcional do documento.
+A inclusão de tal lista pode ser feita com o comando \comando{listafiguras} antes do início do documento.
+
+\section{Tabelas e quadros}
+\label{secao:tabelas_e_quadros}
+
+A inserção de tabelas e quadros é feita de forma semelhante a inserção de figuras, porém são utilizados os ambientes \textit{table} e \textit{quadro}. A principal diferença entre tabelas e quadros, de acordo com \citet{ifmg:2020:manual}, é que as tabelas são destinadas para informações numéricas e os quadros são mais adequados para informações textuais.
+
+Como exemplos foram inseridas a Tabela \ref{tabela:lista_produtos} que exibe uma de lista de produtos e a Tabela \ref{tabela:populacao_america_sul} que mostra a população dos países da América do Sul. Foi inserido também o Quadro \ref{quadro:editores_texto_livres} com alguns editores que podem ser usados para se trabalhar com Latex para demonstrar a inserção de quadros.
+
+\begin{table}[!htb]
+\caption{Lista de produtos} \label{tabela:lista_produtos}
+\begin{tabularx}{\textwidth}{X|l|r|r|r} \hline
+Produto      & Unidade & Preço (R\$) & Quantidade & Total (R\$) \\ \hline
+Arroz        & Kg      & 2,00        & 550        & 1.100,00    \\
+Óleo de Soja & L       & 2,50        & 500        & 750,00      \\
+Açucar       & Kg      & 3,00        & 100        & 300,00      \\ \hline
+\end{tabularx}
+\fonte{Elaborado pelo autor, 2020.}
+\end{table}
+
+\begin{table}[!htb] \centering
+\caption{População dos países da América do Sul} \label{tabela:populacao_america_sul}
+\begin{varwidth}{\linewidth}
+\begin{tabular}{r|l|r}        \hline
+Código  & País            & População   \\ \hline
+1       & Brasil          & 191.480.630 \\
+2       & Argentina       &  39.934.100 \\
+3       & Colômbia        &  46.741.100 \\
+4       & Paraguai        &   9.694.200 \\
+5       & Uruguai         &   3.350.500 \\
+6       & Peru            &  28.221.500 \\
+7       & Equador         &  13.481.200 \\
+8       & Bolívia         &   9.694.200 \\
+9       & Venezuela       &  28.121.700 \\
+10      & Chile           &  16.803.000 \\ \hline
+\end{tabular}
+\fonte{\citefonte{wikipedia:2011:america_sul}.}
+\end{varwidth}
+\end{table}
+
+\begin{quadro}[!htb] \centering
+\caption{Editores de Texto Livres} \label{quadro:editores_texto_livres}
+\begin{varwidth}{\linewidth}
+\begin{tabular}{|l|l|r|}        \hline
+Editor     & Multiplataforma & Específico para Latex \\ \hline
+Kwriter    & Sim             & Não                   \\
+Texmaker   & Sim             & Sim                   \\
+Kile       & Sim             & Sim                   \\
+Geany      & Sim             & Não                   \\ \hline
+\end{tabular}
+\fonte{Elaborado pelo autor, 2020.}
+\end{varwidth}
+\end{quadro}
+
+A lista de tabelas também é um elemento opcional que pode ser incluída com o comando \comando{listatabelas} antes do início do documento. O mesmo acontece com a lista de quadros que pode ser incluída com o comando \comando{listaquadros}.
+
+\section{Algoritmos e códigos} \label{secao:algoritmos_e_codigos}
+
+Além dos corpos flutuantes convencionais para inserir figuras (\comando{begin\{figure\}}) e tabelas (\comando{begin\{figure\}}), a classe {IF\TeX} possui mais dois tipos de corpos flutuantes um para algoritmos (\comando{begin\{algoritmo\}}) e outro para códigos (\comando{begin\{codigo\}}). Como exemplo temos o Algoritmo \ref{algoritmo:mdc} que calcula o máximo divisor comum entre dois números e os Códigos \ref{codigo:notas_alunos} e \ref{codigo:metodo_leitura} que são uma consulta na \textit{Structured Query Language (SQL)} e um método em Java que recebe um texto digitado pelo usuário, respectivamente.
+
+\begin{algoritmo}[!htb]
+\caption{Algoritmo para cálculo de máximo divisor comum MDC($n_1$,$n_2$)} \label{algoritmo:mdc}
+\begin{algorithmic}[1]
+ \Require Dois números inteiros ($n_1, n_2$)
+ \If{$n_2 > n_1$} \Comment{Garante que o maior número seja $n_1$}
+   \State troca valores de $n_1$ e $n_2$
+ \EndIf
+ \Repeat
+   \State $r \leftarrow$ resto da divisão de $n_1$ por $n_2$
+   \State $n_1 \leftarrow n_2$
+   \State $n_2 \leftarrow r$
+ \Until{$r > 0$}
+ \Return $n_1$
+\end{algorithmic}
+\fonte{Elaborado pelo autor, 2020.}
+\end{algoritmo}
+
+\begin{codigo}[!htb]
+\caption{Consulta SQL} \label{codigo:notas_alunos}
+\begin{Verbatim}[frame=lines]
+SELECT a.nome_aluno AS aluno,
+       d.nome_disciplina AS disciplina,
+       m.nota AS nota
+FROM aluno AS a,
+     disciplina AS d,
+     matriculado AS m
+WHERE a.id_aluno = m.id_aluno
+  AND d.id_disciplina = m.id_disciplina
+ORDER BY a.nome_aluno, d.nome_disciplina;
+\end{Verbatim}
+\fonte{Elaborado pelo autor, 2020.}
+\end{codigo}
+
+\begin{codigo}[!htb]
+\caption{Sub-rotina para obter uma entrada do usuário} \label{codigo:metodo_leitura}
+\begin{Verbatim}[frame=lines]
+public static String Leitura(){
+    BufferedReader reader =
+        new BufferedReader(new InputStreamReader(System.in));
+    try {
+        return reader.readLine(); // Lê uma linha pelo teclado
+    } catch (IOException e) {
+        e.printStackTrace();
+        return "";
+    }
+}
+\end{Verbatim}
+\fonte{Elaborado pelo autor, 2020.}
+\end{codigo}
+
+Existem diversos outros pacotes disponíveis para escrever algoritmos e códigos. Nos exemplos anteriormente foram utilizados o pacote \textit{algpseudocode} e \textit{fancyvrb}. O pacote \textit{algpseudocode} é usado para escrever algoritmos em alto nível \cite{janos:2005:algpseudocode}. Já o pacote \textit{fancyvrb} serve para escrever códigos mono-espaçados \cite{zandt:2010:fancyvrb}.
+Caso sejam utilizados os ambientes de algoritmo e código, podem ser incluídos os comandos \comando{listaalgoritmos} e \comando{listacodigos} antes do \comando{begin\{document\}} para que a lista de algoritmos e a lista de código sejam criadas.
+Existem também diversos outros pacotes para formatação de algoritmos e códigos que podem ser usados como o \textit{minted} com suporte a diversas linguagens de programação \cite{poore:2016:minted}.

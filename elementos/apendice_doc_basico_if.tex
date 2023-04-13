@@ -1,0 +1,109 @@
+\begin{Verbatim}[frame=single, fontsize=\scriptsize]
+\documentclass[oneside,monografia]{iftex2020} % Documento utilizando a classe iftex
+
+\addbibresource{referencias.bib}    % Arquivo com referências
+
+\titulo{Título do trabalho}         % Título
+\autor{Nome do Autor}               % Autor
+\local{Bambuí - MG}                 % Local
+\data{1}{junho}{2017}               % Data da defesa
+
+\instituicao{IFMG}{Instituto Federal Minas Gerais}
+{Instituto Federal de Educação Ciência e
+Tecnologia de Minas Gerais}         % Instituição
+\unidade{Campus Bambuí}             % Unidade do IF
+\curso{Bacharel}{Bacharelado}
+{Engenharia de Computação}          % Título obtido e Curso
+
+\orientador{Nome do Orientador}             % Orientador
+\coorientador[F]{Nome da Coorientadora}     % Coorientadora
+\instituicaocoorientador{Instituição da Coorientadora}
+
+% Membros da banca examinadora (além do orientador e coorientador)
+\membrobanca{Fulando de Tal}{Instituição do Fulano de Tal}
+\membrobanca{Ciclano de Tal}{Instituição do Ciclano de Tal}
+
+\ficha{elementos/ficha_catalografica}     % Ficha catalográfica
+\assinaturas{figuras/assinaturas}         % Assinaturas da folha de aprovação
+
+\textodedicatoria{%
+  Texto da dedicatória.
+}
+
+\textoagradecimentos{%
+  Texto dos agradecimentos.
+}
+
+\textoepigrafe{%
+  ``As invenções são, sobretudo, o resultado de um trabalho teimoso.''\\
+  (Santos Dumont)
+}
+
+\resumo{%
+  Texto do resumo.
+}
+\palavraschave{Palavras. Chave;}
+
+\abstract{%
+  Texto do abstract.
+}
+\keywords{English. Keywords.}
+
+\listafiguras                     % Lista de Figuras
+\listaquadros                     % Lista de Quadros
+\listatabelas                     % Lista de Tabelas
+\listaalgoritmos                  % Lista de Algoritmos
+\listacodigos                     % Lista de Códigos
+% Lista de siglas (opcional)
+\listasiglas{%
+ \begin{itemize}[]
+  \item[ABNT] -- Associação Brasileira de Normas Técnicas
+  \item[IFMG] -- Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais
+  \item[SQL] -- \textit{Structured Query Language}
+  \item[TCC] -- Trabalho de conclusão de curso
+ \end{itemize}
+}
+
+% Lista de símbolos (opcional)
+\listasimbolos{%
+ \begin{itemize}[]
+   \item[$\mathbb{X}$] -- Variável X
+   \item[$\mathsf{I\!R}$] -- Conjunto dos números reais
+ \end{itemize}
+}
+
+% Início do documento
+\begin{document}
+
+\maketitle
+
+\chapter{Introdução}
+
+Capítulo de Introdução
+
+\chapter{Desenvolvimento}
+
+Capítulo de Desenvolvimento
+
+\chapter{Conclusão}
+
+Capítulo de conclusão
+
+\postextual
+
+\printbibliography
+
+\apendices\partapendices
+
+\chapter{Título do Apêndice}
+
+Conteúdo do apêndice
+
+\anexos\partanexos
+
+\chapter{Título do Anexo}
+
+Conteúdo do anexo.
+
+\end{document}
+\end{Verbatim}

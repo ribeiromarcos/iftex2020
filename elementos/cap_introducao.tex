@@ -1,0 +1,12 @@
+Este documento explica brevemente como trabalhar com a classe \textit{Latex} {IF\TeX} para confeccionar trabalhos acadêmicos seguindo as normas da Associação Brasileira de Normas Técnicas (ABNT) e o \textit{Manual de normalização de trabalhos acadêmicos} do IFMG \cite{ifmg:2020:manual}.
+O referido manual foi desenvolvido com o intuito de padronizar as trabalhos acadêmicos produzidos na instituição.
+
+A classe {IF\TeX} foi construída com base na classe \textit{abntex2} mantendo as mesmas opções presentes nesta classe, portanto é recomendável que seja consultada a documentação da mesma \cite{araujo:2016:abntex2}.
+A classe \textit{abntex2} foi desenvolvida para facilitar a escrita de documentos seguindo as normas da ABNT.
+O requisito básico para utilização da classe {IF\TeX} é criar um documento com o comando \comando{documentclass\{iftex2020\}}.
+Por padrão, a classe {IF\TeX}, cria um documento frente e verso.
+Para documentos somente com anverso, é necessário informar a opção \textbf{onseside} (comando \comando{documentclass[oneside]\{iftex2020\}}).
+O tipo de documento deve ser informado como opção também.
+Os tipos de documentos possíveis são \textbf{monografia}, \textbf{estagio}, \textbf{dissetacao} e \textbf{tese}.
+O tipo de documento padrão é a monografia.
+Dessa maneira, para a criação de um relatório de estágio deve ser criado um documento com o comando \comando{documentclass[oneside,estagio]\{iftex2020\}}.
