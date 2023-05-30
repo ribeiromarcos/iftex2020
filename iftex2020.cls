@@ -251,7 +251,6 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 % ===============================================
 % Ficha catalográfica
 % ===============================================
-% \newcommand{\arquivoficha}{}%
 \newcommand{\ficha}[1]{%
   \newcommand{\arquivoficha}{#1}%
 }%

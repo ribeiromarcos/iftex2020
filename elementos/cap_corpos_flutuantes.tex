@@ -5,21 +5,20 @@ Na Seção \ref{secao:figuras} é mostrado como inserir figuras, a Seção \ref{
 \section{Figuras}
 \label{secao:figuras}
 
-A inserção de figuras é realizada normalmente através do comando \comando{begin\{figure\}}.
+Normalmente, a inserção de figuras é realizada através do comando \comando{begin\{figure\}}.
 A Figura \ref{figura:logomarca_if} exibe a logomarca do IF.
 É interessante usar o ambiente \texttt{varwidth} em todas as figuras para manter a fonte alinhada a esquerda.
 No caso da Figura \ref{figura:logomarca_if}, também foi necessário adicionar uma borda para aumentar o tamanho da figura e manter o alinhamento da fonte.
 No caso de figuras de outros autores a citação na fonte deve ser feita com o comando \comando{citefonte\{\}}.
 
 \begin{figure}[!htb] \centering
-\caption{Logomarca do IF} \label{figura:logomarca_if}
-\begin{varwidth}{\linewidth}
- \framebox[0.8\linewidth]{
-   \includegraphics[width=6cm]{figuras/if}
- }
- \fonte{\url{https://www.ifmg.edu.br/portal/comunicacao/identidade-visual}}
-\end{varwidth}
+  \caption{Logomarca do IF} \label{figura:logomarca_if}
+  \begin{varwidth}{\linewidth}
+    \includegraphics[width=6cm]{figuras/if}
+    \fonte{\citefonte{ifmg:2020:manual}.}
+  \end{varwidth}
 \end{figure}
+
 
 De acordo com as normas ABNT a lista de figuras é um elemento opcional do documento.
 A inclusão de tal lista pode ser feita com o comando \comando{listafiguras} antes do início do documento.
