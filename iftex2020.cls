@@ -51,6 +51,7 @@
 \RequirePackage[style=abnt,justify,%
 giveninits,noslsn,uniquename=init,%
 backend=biber]{biblatex}          % Referências
+\RequirePackage{csquotes}         % Correção de aspas em referências
 
 % -----------------------------------------------
 % Bibliotecas para desenho com tikz
