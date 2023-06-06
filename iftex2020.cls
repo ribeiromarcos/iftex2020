@@ -49,7 +49,7 @@
 \RequirePackage{tikz}             % Desenhos
 \RequirePackage{adjustbox}        % Reduzir / ampliação
 \RequirePackage[style=abnt,justify,%
-giveninits,noslsn,uniquename=init,%
+giveninits, noslsn, uniquelist=minyear,%
 backend=biber]{biblatex}          % Referências
 \RequirePackage{csquotes}         % Correção de aspas em referências
 
@@ -697,7 +697,7 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
       \advance\count1 by 1%
     }%
     \ifthenelse{\isundefined{\AssinaturasAprovacao}}{}{%
-      \includegraphics[width=\linewidth]{\AssinaturasAprovacao}
+      \includegraphics[width=\linewidth]{\AssinaturasAprovacao}%
     }%
     \vfill%
     {\Local}\par%
