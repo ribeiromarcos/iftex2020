@@ -48,8 +48,8 @@
 \RequirePackage{cleveref}         % Correção de links para sub-equações
 \RequirePackage{tikz}             % Desenhos
 \RequirePackage{adjustbox}        % Reduzir / ampliação
-\RequirePackage[style=abnt,justify,%
-giveninits, noslsn, uniquelist=minyear,%
+\RequirePackage[style=abnt,noslsn,%
+giveninits,uniquelist=minyear,    %
 backend=biber]{biblatex}          % Referências
 \RequirePackage{csquotes}         % Correção de aspas em referências
 
@@ -296,10 +296,13 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 
 
 % ===============================================
-% URLs na mesma fonte do texto
+% URLs na mesma fonte do texto e quebra correta
 % ===============================================
 
 \urlstyle{same}%
+\setcounter{biburlnumpenalty}{100}%
+\setcounter{biburlucpenalty}{100}%
+\setcounter{biburllcpenalty}{100}%
 
 % ===============================================
 % Citações e referências
