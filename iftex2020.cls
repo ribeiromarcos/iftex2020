@@ -178,7 +178,7 @@ backend=biber]{biblatex}          % Referências
 
 % Monografia
 \newcommand{\PreambuloMonografia}{%
-Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso} do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais -- {\Unidade} para obtenção do grau de {\TituloCurso} em Administração.%
+Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso} do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais -- {\Unidade} para obtenção do grau de {\TituloCurso} em \Curso.%
 }%
 
 % \newcommand{\Preambulo}{\PreambuloMonografia}%
