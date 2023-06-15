@@ -648,6 +648,13 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
     \hspace{.5\textwidth}%
     \begin{minipage}{.5\textwidth}%
         {\Preambulo}%
+        \ifthenelse{\not\equal{\Orientador}{}}{%
+          \par\vspace*{\baselineskip}%
+          {\RotuloOrientador}: {\Orientador}\\%
+        }{}%
+        \ifthenelse{\not\equal{\Coorientador}{}}{%
+          {\RotuloCoorientador}: {\Coorientador}\\%
+        }{}%
     \end{minipage}%
     \vfill%
     {\Local}\par%
