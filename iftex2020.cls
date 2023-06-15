@@ -172,21 +172,14 @@ backend=biber]{biblatex}          % Referências
 % ===============================================
 % Estágio
 \newcommand{\PreambuloEstagio}{%
-  Relatório de estágio do Curso de {\TipoCurso} em {\Curso} do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais -- {\Unidade}, sob a orientação d{\GeneroOrientador} {\Orientador}.%
+  Relatório de estágio do Curso de {\TipoCurso} em {\Curso} do {\InstituicaoCompleto} -- {\Unidade}, sob a orientação d{\GeneroOrientador} {\Orientador}.%
   O Estágio foi realizado na instituição {\EmpresaEstagio} e teve a duração de {\HorasEstagio} horas.%
 }%
 
 % Monografia
 \newcommand{\PreambuloMonografia}{%
-Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso} do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais -- {\Unidade} para obtenção do grau de {\TituloCurso} em \Curso.%
+Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso} do {\InstituicaoCompleto} -- {\Unidade} para obtenção do grau de {\TituloCurso} em {\Curso}.%
 }%
-
-% \newcommand{\Preambulo}{\PreambuloMonografia}%
-% \renewcommand{\Preambulo}{%
-%   \ifthenelse{\equal{\TipoDoc}{estagio}}{%
-%     \PreambuloEstagio%
-%   }{}%
-% }%
 
 \DeclareRobustCommand{\Preambulo}{%
   \ifthenelse{\equal{\TipoDoc}{monografia}}{%
@@ -946,7 +939,7 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 }%
 
 % -----------------------------------------------
-% Ambiente baseados em teoremas
+% Ambientes baseados em teoremas
 % -----------------------------------------------
 \theoremstyle{definition}%
 \newtheorem{corolario}{Corolário}%
