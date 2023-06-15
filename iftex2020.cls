@@ -151,7 +151,7 @@ backend=biber]{biblatex}          % Referências
   }%
 }%
 
-\newcommand{\InstituicaoCoorientador}{{\InstituicaoCurto} -- {\Unidade}}%
+\newcommand{\InstituicaoCoorientador}{{\SiglaInstituicao} -- {\Unidade}}%
 \newcommand{\instituicaocoorientador}[1]{%
   \renewcommand{\InstituicaoCoorientador}{#1}%
 }%
@@ -181,8 +181,17 @@ backend=biber]{biblatex}          % Referências
 Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso} do Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais -- {\Unidade} para obtenção do grau de {\TituloCurso} em Administração.%
 }%
 
-\newcommand{\Preambulo}{\PreambuloMonografia}%
-\renewcommand{\Preambulo}{%
+% \newcommand{\Preambulo}{\PreambuloMonografia}%
+% \renewcommand{\Preambulo}{%
+%   \ifthenelse{\equal{\TipoDoc}{estagio}}{%
+%     \PreambuloEstagio%
+%   }{}%
+% }%
+
+\DeclareRobustCommand{\Preambulo}{%
+  \ifthenelse{\equal{\TipoDoc}{monografia}}{%
+    \PreambuloMonografia%
+  }{}%
   \ifthenelse{\equal{\TipoDoc}{estagio}}{%
     \PreambuloEstagio%
   }{}%
