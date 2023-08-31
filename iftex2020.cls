@@ -886,25 +886,35 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 % Anexos e apêndices (deve ficar antes da definição do \maketitle)
 % -----------------------------------------------
 \renewcommand{\anexosname}{ANEXOS}%
-\renewcommand{\apendicesname}{AP\^ENDICES}%
+\renewcommand{\apendicesname}{APÊNDICES}%
+
+\renewcommand{\partapendices}{%
+  \part*{\apendicesname}%
+  \addcontentsline{toc}{chapter}{\apendicesname}%
+}%
+
+\renewcommand{\partanexos}{%
+  \part*{\anexosname}%
+  \addcontentsline{toc}{chapter}{\anexosname}%
+}%
 
 \renewcommand{\postextual}{%
   \bookmarksetup{startatroot}%
   \phantomsection%
   \renewcommand{\tocpartapendices}{%
-    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{0em}}%
+    \addtocontents{toc}{\cftsetindents{part}{0em}{0em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocpartanexos}{%
-    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{0em}}%
+    \addtocontents{toc}{\cftsetindents{part}{0em}{0em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocinnonumchapter}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{3em}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{0em}{3em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocprintchapternonum}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{0em}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{0em}{0em}}%
   }%
 }%
 
