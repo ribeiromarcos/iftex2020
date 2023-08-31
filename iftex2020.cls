@@ -356,9 +356,19 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 
 % --------------------------------------------------
 
-% Coloca et al em itálico
-\DefineBibliographyStrings{brazil}{andothers={\textit{et al}.}}%
-
+% Coloca et al. em itálico
+\newcommand*{\mkandothers}{\itshape}%
+\renewbibmacro*{name:andothers}{%
+  \ifboolexpr{%
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}%
+    and%
+    test \ifmorenames%
+  }%
+  {\ifnumgreater{\value{liststop}}{1}%
+    {\finalandcomma}%
+    {}%
+    \andothersdelim\bibstring[\mkandothers]{andothers}}%
+  {}}%
 % --------------------------------------------------
 
 % Correção em trabalhos de eventos
@@ -472,9 +482,6 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 
 % Redefinição do título das referências
 \defbibheading{bibliography}[REFERÊNCIAS]{%
- \renewcommand{\tocprintchapternonum}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{0em}{0em}}%
- }%
  \chapter*{#1}%
  \markboth{#1}{#1}%
  \phantomsection\addcontentsline{toc}{chapter}{REFERÊNCIAS}%
@@ -521,16 +528,21 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 \setlength{\ABNTEXcitacaorecuo}{4cm}%
 
 % Espaçamento após título de capítulo
-\setlength\afterchapskip{1em}%
-\setlength\aftersecskip{1em}%
-\setlength\aftersubsecskip{1em}%
-\setlength\aftersubsubsecskip{1em}%
+\setlength{\afterchapskip}{1em}%
+\setlength{\aftersecskip}{1em}%
+\setlength{\aftersubsecskip}{1em}%
+\setlength{\aftersubsubsecskip}{1em}%
 
 % Equações com numeração contínua
 \counterwithout{equation}{chapter}%
 % Numerar sub-sub-seções
 \setsecnumdepth{subsubsection}%
 
+% Espaços entre números e títulos no sumário
+\setlength{\cftlastnumwidth}{4em}%
+\setlength{\cftsectionnumwidth}{\cftlastnumwidth}%
+\setlength{\cftsubsectionnumwidth}{\cftlastnumwidth}%
+\setlength{\cftsubsubsectionnumwidth}{\cftlastnumwidth}%
 % ===============================================
 % Flutuantes
 % ===============================================
@@ -592,15 +604,6 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
   \aliaspagestyle{chapter}{abntchapfirst}%
   \aliaspagestyle{cleared}{paginasimples}%
   \nouppercaseheads%
-}%
-
-% Configuração de páginas pós-textuais
-\renewcommand{\postextual}{%
-  \pagestyle{abntheadings}%
-  \aliaspagestyle{chapter}{abntchapfirst}%
-  \aliaspagestyle{cleared}{paginasimples}%
-  \aliaspagestyle{part}{paginasimples}%
-  \aliaspagestyle{afterpart}{paginasimples}%
 }%
 
 % Aliás para comando de páginas pós-textuais
@@ -836,7 +839,6 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 % -----------------------------------------------
 % Lista de algoritmos
 % -----------------------------------------------
-
 \newcommand{\listaalgoritmos}{%
   \newcommand{\IncluirListaAlgoritmos}{TRUE}%
 }%
@@ -853,7 +855,6 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 % -----------------------------------------------
 % Lista de códigos
 % -----------------------------------------------
-
 \newcommand{\listacodigosnome}{Lista de códigos}%
 \newcommand{\listacodigos}{%
   \newcommand{\IncluiListaCodigos}{TRUE}%
@@ -871,6 +872,8 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 % -----------------------------------------------
 % Sumário
 % -----------------------------------------------
+% Espaço entre entradas de partes no sumário
+\setlength{\cftbeforepartskip}{0em}%
 \newcommand{\Sumario}{%
   \pretextualchapter{\contentsname}%
   \thispagestyle{empty}%
@@ -886,21 +889,22 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
 \renewcommand{\apendicesname}{AP\^ENDICES}%
 
 \renewcommand{\postextual}{%
-  \phantompart%
+  \bookmarksetup{startatroot}%
+  \phantomsection%
   \renewcommand{\tocpartapendices}{%
-    \addtocontents{toc}{\cftsetindents{part}{0em}{0em}}%
+    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{0em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocpartanexos}{%
-    \addtocontents{toc}{\cftsetindents{part}{0em}{0em}}%
+    \addtocontents{toc}{\cftsetindents{part}{\cftlastnumwidth}{0em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocinnonumchapter}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{3em}}%
     \cftinserthook{toc}{A}%
   }%
   \renewcommand{\tocprintchapternonum}{%
-    \addtocontents{toc}{\cftsetindents{chapter}{0em}{\cftlastnumwidth}}%
+    \addtocontents{toc}{\cftsetindents{chapter}{\cftlastnumwidth}{0em}}%
   }%
 }%
 
