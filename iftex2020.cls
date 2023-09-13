@@ -387,7 +387,7 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
   \newunit%
   \newblock%
   \usebibmacro{in:eventtitle/organization/editor}%
-  \setunit*{\addspace}%
+  \setunit*{\addspace}% \setunit*{\addcomma\addspace}%
   \newblock%
   \printfield{number}%
   \setunit*{\adddot\addcomma\addspace}%
@@ -435,6 +435,70 @@ Trabalho de conclusão de curso apresentado ao Curso de {\TipoCurso} em {\Curso}
   \printfield{note}%
   \newblock%
   \printunit{\addperiod\addspace}%
+  \iftoggle{bbx:isbn}%
+    {\printfield{isbn}}%
+    {}%
+  \newunit%
+  \newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit%
+  \newblock%
+  \usebibmacro{addendum+pubstate}%
+  \setunit*{\bibpagerefpunct}%
+  \newblock%
+  \usebibmacro{pageref}%
+  \setunit*{\addperiod\addspace}%
+  \newunit%
+  \newblock%
+  \iftoggle{bbx:related}%
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}%
+    {}%
+  \usebibmacro{finentry}%
+}%
+
+% Correção de eventos
+\DeclareBibliographyDriver{proceedings}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{organization/eventtitle}%
+  \setunit*{\addspace}% \setunit*{\addcomma\addspace}%
+  \printfield{number}%
+  \setunit*{\adddot\addcomma\addspace}%
+  \printeventdate%
+  \setunit{\addcomma\addspace}%
+  \usebibmacro{venue}%
+  \newunit%
+  \newblock%
+  \usebibmacro{maintitle+title}%
+  \newunit%
+  \newblock%
+  \usebibmacro{byeditor+others}%
+  \newunit%
+  \newblock%
+  \usebibmacro{publisher+location+date}%
+  \newunit%
+  \newblock%
+  \iffieldundef{maintitle}%
+    {\printfield{volume}%
+     \printfield{part}}%
+    {}%
+  \newunit%
+  \newblock%
+  \printfield{volumes}%
+  \newunit%
+  \newblock%
+  \printfield{note}%
+  \newblock%
+  \printunit{\addperiod\addspace}%
+  \printlist{organization}%
+  \newunit%
+  \newblock%
+  \usebibmacro{chapter+pages}%
+  \newunit%
+  \printfield{pagetotal}%
+  \newunit%
+  \newblock%
   \iftoggle{bbx:isbn}%
     {\printfield{isbn}}%
     {}%
