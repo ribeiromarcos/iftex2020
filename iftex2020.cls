@@ -48,8 +48,8 @@
 \RequirePackage{cleveref}         % Correção de links para sub-equações
 \RequirePackage{tikz}             % Desenhos
 \RequirePackage{adjustbox}        % Reduzir / ampliação
-\RequirePackage[style=abnt,noslsn,%
-giveninits,uniquelist=minyear,    %
+\RequirePackage[style=abnt,noslsn, giveninits, %
+extrayear, uniquename=false, uniquelist=minyear, %
 backend=biber]{biblatex}          % Referências
 \RequirePackage{csquotes}         % Correção de aspas em referências
 
